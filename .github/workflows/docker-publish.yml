@@ -1,6 +1,12 @@
 name: Build PC Ecosystem Image
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "app-source.b64"
+      - "Dockerfile"
+      - ".github/workflows/docker-publish.yml"
   workflow_dispatch:
 
 permissions:
