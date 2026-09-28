@@ -1,0 +1,40 @@
+title: PC Ecosystem — AI & Node Runtime
+description: >
+  PC Ecosystem Node Runtime provides secure pairing, health monitoring,
+  local storage, tunnel connectivity and future local AI capabilities.
+output_file: .env
+after_save: >
+  Configuration saved. Restart or reinstall the application to apply changes.
+fixed_values:
+  - name: NODE_ENV
+    value: "production"
+  - name: APP_NAME
+    value: "PC Ecosystem"
+  - name: APP_PORT
+    value: "3000"
+fields:
+  - name: NODE_KEY
+    label: Khóa liên kết Node
+    type: password
+    required: true
+    help: >
+      Khóa chỉ dùng để liên kết Node với PC Ecosystem. Không dùng làm khóa mã hóa,
+      khóa ví, Pi API key hoặc mật khẩu quản trị.
+  - name: TUNNEL
+    label: Truy cập từ xa
+    type: select
+    default: "1"
+    options:
+      - value: "1"
+        label: Bật — cho phép kết nối qua secure tunnel
+      - value: "0"
+        label: Tắt — chỉ sử dụng cục bộ
+  - name: LOCAL_AI
+    label: Local AI
+    type: select
+    default: "0"
+    options:
+      - value: "1"
+        label: Bật
+      - value: "0"
+        label: Tắt
